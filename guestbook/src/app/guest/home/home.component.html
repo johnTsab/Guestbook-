@@ -1,1 +1,67 @@
-<p>home works!</p>
+<div class="container">
+  <br/>
+  <h1 style="color: blueviolet; text-align: center; width: 870px">
+    <strong>Guestbook</strong>
+  </h1>
+  <mat-slide-toggle  (click)="toggleDarkMode()" style="margin-bottom: 16px;" >Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode</mat-slide-toggle> 
+   
+  
+
+  <br/>
+  <div class="form-row">
+    <mat-form-field style="width: 175px">
+      <input matInput placeholder="Enter name" type="text" />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field style="width: 175px">
+      <input matInput placeholder="Enter address" type="text" />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field style="width: 175px">
+      <input matInput placeholder="Enter address" type="text" />
+      <mat-icon matSuffix>address</mat-icon>
+    </mat-form-field>
+    <div class="buttons">
+      <button mat-flat-button color="primary">Submit</button>
+      <button mat-flat-button color="warn">Cancel</button>
+    </div>
+  </div>
+   <mat-form-field>
+      <input (input)="searchGuest(filter.value)" matInput placeholder="Search guest" type="text" #filter />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Guest ID </th>
+    <td mat-cell *matCellDef="let guest"> {{guest.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let guest"> {{guest.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Guest email </th>
+    <td mat-cell *matCellDef="let guest"> {{guest.email}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Guest address </th>
+    <td mat-cell *matCellDef="let guest"> {{guest.address}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>

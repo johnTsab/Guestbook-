@@ -1,0 +1,119 @@
+body {
+  background-color: #EBF2FA;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding: 16px;
+}
+
+h3 {
+  color: #05668D;
+  text-align: center;
+  width: 870px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+mat-form-field {
+  width: 175px;
+}
+
+mat-form-field input {
+  width: 100%;
+  border-bottom: 2px solid #427AA1;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.buttons button:first-child {
+  background-color: #11BB41;
+  color: white;
+}
+
+.buttons button:last-child {
+  background-color: #05668D;
+  color: white;
+}
+
+mat-table {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 20px;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 6px;
+}
+
+mat-header-cell {
+  background-color: #427AA1;
+  color: white;
+  font-weight: bold;
+}
+
+mat-row:hover {
+  background-color: #EBF2FA;
+}
+
+
+body.dark-mode {
+  background-color: #05668D;
+  color: #EBF2FA;
+}
+
+.dark-mode .container {
+  background-color: #427AA1;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.dark-mode h3 {
+  color: #EBF2FA;
+}
+
+.dark-mode mat-form-field input {
+  background-color: #EBF2FA;
+  color: #05668D;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.dark-mode .buttons button:first-child {
+  background-color: #11BB41;
+  color: white;
+}
+
+.dark-mode .buttons button:last-child {
+  background-color: #EBF2FA;
+  color: #05668D;
+}
+
+.dark-mode mat-table {
+  background-color: #427AA1;
+  color: #EBF2FA;
+  border-radius: 8px;
+}
+
+.dark-mode mat-header-cell {
+  background-color: #11BB41;
+  color: #EBF2FA;
+}
+
+.dark-mode mat-row:hover {
+  background-color: rgba(17, 187, 65, 0.2); /* #11BB41 with opacity */
+}
