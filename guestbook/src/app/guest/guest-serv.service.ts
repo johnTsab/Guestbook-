@@ -14,4 +14,16 @@ export class GuestServService {
   fetchAllGuests():Observable<Guest[]>{
     return this._httpClient.get<Guest[]>(`${this.baseUrl}`);
   }
+
+  createguest(data:Guest){
+    return this._httpClient.post<Guest[]>(`${this.baseUrl}`,data);
+  }
+
+  deleteguest(data:Guest){
+    return this._httpClient.delete<Guest[]>(`${this.baseUrl}/${data.id}`);
+  }
+
+  updateguest(data:Guest){
+    return this._httpClient.put<Guest[]>(`${this.baseUrl}/${data.id}` , data);
+  }
 }
